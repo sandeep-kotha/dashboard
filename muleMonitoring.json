@@ -90,12 +90,14 @@
           "expr": "Mule_asos_Application_FatalErrors",
           "format": "time_series",
           "intervalFactor": 1,
+          "legendFormat": "Fatal Errors [{{instance}}]",
           "refId": "A"
         },
         {
           "expr": "Mule_asos_Application_ExecutionErrors",
           "format": "time_series",
           "intervalFactor": 1,
+          "legendFormat": "Fatal Errors [{{instance}}]",
           "refId": "B"
         }
       ],
