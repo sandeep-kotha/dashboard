@@ -47,7 +47,7 @@
   "gnetId": 3066,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1523915805237,
+  "iteration": 1523917004838,
   "links": [],
   "panels": [
     {
@@ -62,6 +62,93 @@
         "w": 12,
         "x": 0,
         "y": 0
+      },
+      "id": 18,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "Mule_asos_Flow_ExecutionErrors",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Execution Errors {{name}} [{{instance}}]",
+          "refId": "A"
+        },
+        {
+          "expr": "Mule_asos_Flow_FatalErrors",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Fatal Errors {{name}} [{{instance}}]",
+          "refId": "B"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Mule Flow Errors",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_PROM}",
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 9
       },
       "id": 16,
       "legend": {
@@ -162,7 +249,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 9
+        "y": 18
       },
       "id": 14,
       "legend": {
@@ -256,7 +343,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 27
       },
       "id": 12,
       "legend": {
@@ -350,7 +437,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 27
+        "y": 36
       },
       "id": 10,
       "legend": {
@@ -451,7 +538,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 36
+        "y": 45
       },
       "id": 8,
       "legend": {
@@ -538,7 +625,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 45
+        "y": 54
       },
       "id": 2,
       "legend": {
@@ -624,7 +711,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 52
+        "y": 61
       },
       "id": 3,
       "legend": {
@@ -716,7 +803,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 52
+        "y": 61
       },
       "id": 4,
       "legend": {
@@ -800,7 +887,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 59
+        "y": 68
       },
       "id": 5,
       "legend": {
@@ -883,7 +970,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 59
+        "y": 68
       },
       "id": 6,
       "legend": {
@@ -1019,5 +1106,5 @@
   },
   "timezone": "",
   "title": "Mule Monitoring",
-  "version": 5
+  "version": 3
 }
