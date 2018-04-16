@@ -47,7 +47,7 @@
   "gnetId": 3066,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1523912441571,
+  "iteration": 1523914324255,
   "links": [],
   "panels": [
     {
@@ -62,6 +62,100 @@
         "w": 12,
         "x": 0,
         "y": 0
+      },
+      "id": 14,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "Mule_asos_Flow_MinProcessingTime",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{name}} Min processing Time [{{instance}}] ",
+          "refId": "A"
+        },
+        {
+          "expr": "Mule_asos_Flow_MaxProcessingTime",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{name}} Max Processing Time [{{instance}}] ",
+          "refId": "B"
+        },
+        {
+          "expr": "Mule_asos_Flow_AverageProcessingTime",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "{{name}} Average Processing Time [{{instance}}]",
+          "refId": "C"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Mule Flow Processing Time",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_PROM}",
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 9
       },
       "id": 12,
       "legend": {
@@ -155,7 +249,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 9
+        "y": 18
       },
       "id": 10,
       "legend": {
@@ -256,7 +350,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 27
       },
       "id": 8,
       "legend": {
@@ -343,7 +437,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 27
+        "y": 36
       },
       "id": 2,
       "legend": {
@@ -429,7 +523,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 34
+        "y": 43
       },
       "id": 3,
       "legend": {
@@ -521,7 +615,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 34
+        "y": 43
       },
       "id": 4,
       "legend": {
@@ -605,7 +699,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 41
+        "y": 50
       },
       "id": 5,
       "legend": {
@@ -688,7 +782,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 41
+        "y": 50
       },
       "id": 6,
       "legend": {
@@ -824,5 +918,5 @@
   },
   "timezone": "",
   "title": "Mule Monitoring",
-  "version": 6
+  "version": 5
 }
