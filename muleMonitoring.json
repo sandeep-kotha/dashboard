@@ -47,7 +47,7 @@
   "gnetId": 3066,
   "graphTooltip": 0,
   "id": null,
-  "iteration": 1523914324255,
+  "iteration": 1523915805237,
   "links": [],
   "panels": [
     {
@@ -62,6 +62,107 @@
         "w": 12,
         "x": 0,
         "y": 0
+      },
+      "id": 16,
+      "legend": {
+        "avg": false,
+        "current": false,
+        "max": false,
+        "min": false,
+        "show": true,
+        "total": false,
+        "values": false
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "percentage": false,
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "expr": "Mule_asos_Flow_AsyncEventsReceived",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Async Events Received  {{name}} [{{instance}}] ",
+          "refId": "A"
+        },
+        {
+          "expr": "Mule_asos_Flow_SyncEventsReceived",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Sync Events Received  {{name}} [{{instance}}]",
+          "refId": "B"
+        },
+        {
+          "expr": "Mule_asos_Flow_TotalEventsReceived",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Total Events Received  {{name}} [{{instance}}]",
+          "refId": "C"
+        },
+        {
+          "expr": "Mule_asos_Flow_ProcessedEvents",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "legendFormat": "Processed Events  {{name}} [{{instance}}]",
+          "refId": "D"
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Mule Flow Events",
+      "tooltip": {
+        "shared": true,
+        "sort": 0,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ]
+    },
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "${DS_PROM}",
+      "fill": 1,
+      "gridPos": {
+        "h": 9,
+        "w": 12,
+        "x": 0,
+        "y": 9
       },
       "id": 14,
       "legend": {
@@ -155,7 +256,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 9
+        "y": 18
       },
       "id": 12,
       "legend": {
@@ -249,7 +350,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 27
       },
       "id": 10,
       "legend": {
@@ -350,7 +451,7 @@
         "h": 9,
         "w": 12,
         "x": 0,
-        "y": 27
+        "y": 36
       },
       "id": 8,
       "legend": {
@@ -437,7 +538,7 @@
         "h": 7,
         "w": 24,
         "x": 0,
-        "y": 36
+        "y": 45
       },
       "id": 2,
       "legend": {
@@ -523,7 +624,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 43
+        "y": 52
       },
       "id": 3,
       "legend": {
@@ -615,7 +716,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 43
+        "y": 52
       },
       "id": 4,
       "legend": {
@@ -699,7 +800,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 59
       },
       "id": 5,
       "legend": {
@@ -782,7 +883,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 59
       },
       "id": 6,
       "legend": {
