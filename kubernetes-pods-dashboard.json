@@ -53,7 +53,7 @@
   "gnetId": 4686,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1550596913117,
+  "iteration": 1550598590063,
   "links": [],
   "panels": [
     {
@@ -74,7 +74,7 @@
       "content": "<h2 style=\"height:100%; text-align: center; display: flex; align-items: center; justify-content: center;\"><span style=\"color: #ff9900;\">$pod</span></h2>",
       "gridPos": {
         "h": 3,
-        "w": 5,
+        "w": 8,
         "x": 10,
         "y": 0
       },
@@ -82,20 +82,6 @@
       "links": [],
       "mode": "html",
       "title": "Pod Name",
-      "type": "text"
-    },
-    {
-      "content": "<h2 style=\"height:100%; text-align: center; display: flex; align-items: center; justify-content: center;\"><span style=\"color: #ff9900;\">$pod_ns</span></h2>",
-      "gridPos": {
-        "h": 3,
-        "w": 5,
-        "x": 15,
-        "y": 0
-      },
-      "id": 15,
-      "links": [],
-      "mode": "html",
-      "title": "Namespace",
       "type": "text"
     },
     {
@@ -119,10 +105,10 @@
       "gridPos": {
         "h": 3,
         "w": 4,
-        "x": 20,
+        "x": 18,
         "y": 0
       },
-      "id": 17,
+      "id": 18,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -188,7 +174,7 @@
       "content": "<h2 style=\"height:100%; text-align: center; display: flex; align-items: center; justify-content: center;\"><span style=\"color: #ff9900;\">$image</span></h2>",
       "gridPos": {
         "h": 3,
-        "w": 10,
+        "w": 12,
         "x": 0,
         "y": 3
       },
@@ -196,6 +182,20 @@
       "links": [],
       "mode": "html",
       "title": "Base Image",
+      "type": "text"
+    },
+    {
+      "content": "<h2 style=\"height:100%; text-align: center; display: flex; align-items: center; justify-content: center;\"><span style=\"color: #ff9900;\">$pod_ns</span></h2>",
+      "gridPos": {
+        "h": 3,
+        "w": 5,
+        "x": 12,
+        "y": 3
+      },
+      "id": 15,
+      "links": [],
+      "mode": "html",
+      "title": "Namespace",
       "type": "text"
     },
     {
@@ -218,11 +218,11 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 5,
-        "x": 10,
+        "w": 4,
+        "x": 17,
         "y": 3
       },
-      "id": 18,
+      "id": 19,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -259,7 +259,7 @@
       "tableColumn": "",
       "targets": [
         {
-          "expr": "kube_pod_status_ready{condition=\"true\", pod=~\"$pod\"}",
+          "expr": "kube_pod_container_resource_limits_cpu_cores{pod=~\"$pod\"}",
           "format": "time_series",
           "hide": false,
           "intervalFactor": 1,
@@ -267,24 +267,164 @@
         }
       ],
       "thresholds": "",
-      "title": "Status",
+      "title": "Cores",
       "type": "singlestat",
       "valueFontSize": "80%",
-      "valueMaps": [
+      "valueMaps": [],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_PROMETHEUS}",
+      "format": "decbytes",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 0,
+        "y": 6
+      },
+      "id": 20,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
         {
-          "op": "=",
-          "text": "Ready",
-          "value": "1"
+          "name": "value to text",
+          "value": 1
         },
         {
-          "op": "=",
-          "text": "Not Ready",
-          "value": "0"
+          "name": "range to text",
+          "value": 2
         }
       ],
-      "valueName": "avg"
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "kube_pod_container_resource_requests_memory_bytes{pod=~\"$pod\"}",
+          "format": "time_series",
+          "hide": false,
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Min Memory",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_PROMETHEUS}",
+      "format": "decbytes",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 4,
+        "x": 4,
+        "y": 6
+      },
+      "id": 21,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "kube_pod_container_resource_limits_memory_bytes{pod=~\"$pod\"}",
+          "format": "time_series",
+          "hide": false,
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Max Memory",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [],
+      "valueName": "current"
     }
   ],
+  "refresh": "10s",
   "schemaVersion": 16,
   "style": "dark",
   "tags": [
@@ -423,7 +563,7 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
