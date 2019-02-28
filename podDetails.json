@@ -59,7 +59,7 @@
   "gnetId": 4686,
   "graphTooltip": 1,
   "id": null,
-  "iteration": 1550605323822,
+  "iteration": 1551353977351,
   "links": [],
   "panels": [
     {
@@ -117,7 +117,7 @@
       "id": 18,
       "interval": null,
       "links": [],
-      "mappingType": 1,
+      "mappingType": 2,
       "mappingTypes": [
         {
           "name": "value to text",
@@ -137,9 +137,14 @@
       "prefixFontSize": "50%",
       "rangeMaps": [
         {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
+          "from": "0",
+          "text": "Not Ready",
+          "to": "0.9"
+        },
+        {
+          "from": "1",
+          "text": "Ready",
+          "to": "2"
         }
       ],
       "sparkline": {
@@ -180,7 +185,7 @@
       "content": "<h2 style=\"height:100%; text-align: center; display: flex; align-items: center; justify-content: center;\"><span style=\"color: #ff9900;\">$image</span></h2>",
       "gridPos": {
         "h": 3,
-        "w": 12,
+        "w": 10,
         "x": 0,
         "y": 3
       },
@@ -195,7 +200,7 @@
       "gridPos": {
         "h": 3,
         "w": 3,
-        "x": 12,
+        "x": 10,
         "y": 3
       },
       "id": 15,
@@ -224,8 +229,8 @@
       },
       "gridPos": {
         "h": 3,
-        "w": 4,
-        "x": 15,
+        "w": 2,
+        "x": 13,
         "y": 3
       },
       "id": 19,
@@ -274,6 +279,81 @@
       ],
       "thresholds": "",
       "title": "Cores",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [],
+      "valueName": "avg"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "${DS_PROMETHEUS}",
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 15,
+        "y": 3
+      },
+      "id": 25,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "kube_pod_container_status_restarts_total{pod=~\"$pod\"}",
+          "format": "time_series",
+          "hide": false,
+          "intervalFactor": 1,
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Total Restarts",
       "type": "singlestat",
       "valueFontSize": "80%",
       "valueMaps": [],
